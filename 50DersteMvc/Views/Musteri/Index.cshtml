@@ -1,0 +1,32 @@
+﻿@using _50DersteMvc.Models.Entity
+@model List<TBL_MUSTERILER>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>MÜŞTERİ ID</th>
+        <th>MÜŞTERİ ADI</th>
+        <th>MÜŞTERİ SOYADI</th>
+        <th>SİL</th>
+        <th>GÜNCELLE</th>
+    </tr>
+    <tbody>
+        @foreach (var mus in Model)
+        {
+        <tr>
+            <th>@mus.MUSTERIID</th>
+            <td>@mus.MUSTERIAD</td>
+            <td>@mus.MUSTERISOYAD</td>
+            <td> <a href="/Kategori/Sil/@mus.MUSTERIID" class="btn btn-danger">Sil</a></td>
+            <td> <a href="/Kategori/Guncelle/@mus.MUSTERIID" class="btn btn-success">Güncelle</a></td>
+        </tr>
+        }
+    </tbody>
+</table>
+
+<a href="/Musteri/YeniMusteri/" class="btn btn-primary">Yeni Müşteri Ekle</a>
+
