@@ -31,9 +31,11 @@ namespace _50DersteMvc.Controllers
         [HttpPost]
         public ActionResult UrunEkle(TBL_URUNLER p1)
         {
+            var ktg = db.TBL_KATEGORILER.Where(m => m.KATEGORIID == p1.TBL_KATEGORILER.KATEGORIID).FirstOrDefault();
+            p1.TBL_KATEGORILER = ktg;
             db.TBL_URUNLER.Add(p1);
             db.SaveChanges();
-            return View();
+            return RedirectToAction("Index");
         }
     }
 }

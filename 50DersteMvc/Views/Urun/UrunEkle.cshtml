@@ -1,4 +1,4 @@
-﻿@model _50DersteMvc.Models.Entity.TBL_KATEGORILER
+﻿@model _50DersteMvc.Models.Entity.TBL_URUNLER
 
 @{
     ViewBag.Title = "UrunEkle";
@@ -18,7 +18,7 @@
     <br />
     <div>
         <label>Kategori Seçiniz</label>
-        @Html.DropDownListFor(m => m.KATEGORIADI, (List<SelectListItem>)ViewBag.dgr, new { @class = "form-control" })
+        @Html.DropDownListFor(m => m.TBL_KATEGORILER.KATEGORIID, (List<SelectListItem>)ViewBag.dgr, new { @class = "form-control" })
     </div>
     <br />
     <div>
