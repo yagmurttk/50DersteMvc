@@ -24,9 +24,32 @@ namespace _50DersteMvc.Controllers
         [HttpPost]
         public ActionResult YeniKategori(TBL_KATEGORILER p1)
         {
+            if (!ModelState.IsValid)
+            {
+                return View("YeniKategori");
+            }
             db.TBL_KATEGORILER.Add(p1);
             db.SaveChanges();
-            return View();
+            return RedirectToAction("Index");
+        }
+        public ActionResult SIL(int id)
+        {
+            var kategori = db.TBL_KATEGORILER.Find(id);
+            db.TBL_KATEGORILER.Remove(kategori);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+        public ActionResult KategoriGetir(int id)
+        {
+            var ktgr = db.TBL_KATEGORILER.Find(id);
+            return View("KategoriGetir",ktgr);
+        }
+        public ActionResult Guncelle(TBL_KATEGORILER p1)
+        {
+            var ktg = db.TBL_KATEGORILER.Find(p1.KATEGORIID);
+            ktg.KATEGORIADI = p1.KATEGORIADI;
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
     }
 }

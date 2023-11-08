@@ -1,5 +1,4 @@
-﻿@using _50DersteMvc.Models.Entity
-@model List<TBL_MUSTERILER>
+﻿@model _50DersteMvc.Models.Entity.TBL_MUSTERILER
 
 @{
     ViewBag.Title = "YeniMusteri";
@@ -9,11 +8,13 @@
 <form class="form-group" method="post">
     <div>
         <label>Müşteri Adı</label>
-        <input type="text" class="form-control" name="MUSTERIAD" />       
+        @Html.TextBoxFor(m => m.MUSTERIAD, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.MUSTERIAD, "", new { @style = "color:red" })
     </div>
     <div>
         <label>Müşteri Soyadı</label>
-        <input type="text" class="form-control" name="MUSTERISOYAD" />
+        @Html.TextBoxFor(m => m.MUSTERISOYAD, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.MUSTERISOYAD, "", new { @style = "color:red" })
     </div>
     <br />
     <div>
