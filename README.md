@@ -1,5 +1,5 @@
 # 50DersteMvc
-"MVC Kursunu Tamamladım: Web Geliştirme Yolculuğumun Güzel Bir Adımı!"
+# "MVC Kursunu Tamamladım: Web Geliştirme Yolculuğumun Güzel Bir Adımı!"
 
 Bu yolculuk boyunca MVC (Model-View-Controller) mimarisi hakkında büyük bir bilgi birikimi kazandım ve birçok web geliştirme konusunda önemli yetenekler edindim.
 Bu yazıda, kurs sırasında öğrendiğim ve bir proje üzerinde uyguladığım temel konuları paylaşmak istiyorum.
