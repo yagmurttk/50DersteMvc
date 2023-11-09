@@ -12,10 +12,16 @@ namespace _50DersteMvc.Controllers
     {
         // GET: Musteri
         DbMvcStokEntities db = new DbMvcStokEntities();
-        public ActionResult Index()
+        public ActionResult Index(string p)
         {
-            var degerler = db.TBL_MUSTERILER.ToList();
-            return View(degerler);
+            var degerler = from d in db.TBL_MUSTERILER select d;
+            if (!string.IsNullOrEmpty(p))
+            {
+                degerler = degerler.Where(m => m.MUSTERIAD.Contains(p));
+            }
+            return View(degerler.ToList());
+            //var degerler = db.TBL_MUSTERILER.ToList();
+           // return View(degerler);
         }
         [HttpGet]
         public ActionResult YeniMusteri()
